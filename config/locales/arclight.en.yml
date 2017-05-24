@@ -33,6 +33,7 @@ en:
           title: 'Navigation overview'
         context_sidebar:
           online_field: 'Online'
+          offline_field: 'Online (no online content)'
           in_person_field: 'In person'
           terms_field: 'Terms & Conditions'
           cite_field: 'How to cite this collection'

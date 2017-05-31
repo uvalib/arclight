@@ -11,6 +11,7 @@ module Arclight
         add_hierarchy_max_rows
         add_hierarchy_sort
         add_highlighting
+        add_grouping
       ]
     end
 
@@ -27,6 +28,14 @@ module Arclight
     # For the hierarchy view, set the sort order to preserve the order of components
     def add_hierarchy_sort(solr_params)
       solr_params[:sort] = 'sort_ii asc' if blacklight_params[:view] == 'hierarchy'
+    end
+
+    def add_grouping(solr_params)
+      if blacklight_params[:group] == 'true'
+        solr_params[:group] = true
+        solr_params['group.field'] = 'collection_ssi'
+        solr_params['group.ngroups'] = true
+      end
       solr_params
     end
 

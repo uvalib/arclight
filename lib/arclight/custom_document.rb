@@ -53,6 +53,7 @@ module Arclight
       title = add_normalized_title(solr_doc)
       Solrizer.set_field(solr_doc, 'collection', title, :facetable)
       Solrizer.set_field(solr_doc, 'collection', title, :displayable)
+      Solrizer.set_field(solr_doc, 'collection', title, :stored_sortable)
     end
 
     def arclight_field_definitions

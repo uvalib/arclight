@@ -46,12 +46,14 @@ module Arclight
       @parent_titles_search_field_name ||= Solrizer.solr_name('parent_unittitles', :searchable)
       @collection_facet_name ||= Solrizer.solr_name('collection', :facetable)
       @collection_name ||= Solrizer.solr_name('collection', :displayable)
+      @collection_indexed_name ||= Solrizer.solr_name('collection', :stored_sortable)
 
       titles = ancestral_titles(node)
       solr_doc[@parent_titles_field_name] = titles
       solr_doc[@parent_titles_search_field_name] = titles
       solr_doc[@collection_name] = [titles.first] # collection is always on top
       solr_doc[@collection_facet_name] = [titles.first]
+      solr_doc[@collection_indexed_name] = titles.first
     end
 
     def add_count_of_child_compontents(node, solr_doc)

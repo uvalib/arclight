@@ -5,7 +5,7 @@
 gem 'blacklight', github: 'projectblacklight/blacklight'
 gem 'blacklight_range_limit', github: 'projectblacklight/blacklight_range_limit', branch: 'blacklight-7'
 
-gem 'arclight', github: 'uvalib/arclight/uva-indexer-mods'
+gem 'arclight', github: 'uvalib/arclight', :branch => 'uva-indexer-mods'
 
 run 'bundle install'
 
